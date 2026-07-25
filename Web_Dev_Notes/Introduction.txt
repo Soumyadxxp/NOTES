@@ -1,0 +1,202 @@
+WEB TECHNOLOGIES :
+-----------------
+WEB IS A SYSTEM OF INTERNET SERVERS THAT SUPPORT, ESPECIALLY FORMATED DOCUMENTS. THE WEB USES THE HTTP PROTOCOL ONLY, ONE OF THE LANGAUGES SPOKEN OVER THE INTERNET, TO TRANSMIT DATA. WEB SERVICES THAT USE HTTP ALLOWING APPLICATIONS  TO COMMUNICATE IN ORDER TO EXCHANGE BUSINESS LOGIC USING THE WEB FOR SHARING INFORMATION.  THE WEB IS JUST ONE OF THE WAYS THAT INFORMATION CAN BE PROPAGATED OVER THE INTERNET. THE INTERNET DOCUMENTS ARE FORMATED IN A SCRIPT CALLED HYPER TEXT MARKUP LANGUAGE(HTML) THAT SUPPORT LINKS TO OTHER DOCUMENTS AS WELL AS GRAPHICS, AUDIO AND VIDEO FILE, ETC. THE APPLICATIONS THAT MAKE IT EASY TO ACCESS THE WORLD WIDE WEB ARE CALLED WEB BROWSERS, SUCH AS GOOGLE CHROME, MOZILLA FIREFOX AND MICROSOFT EDGE, ETC. IN A WEB PAGE, INFORMATION IS PRESENTED USING THE FOLLOWING TECHNOLOGIES,
+
+1) HTML
+2) JAVASCRIPT
+3) JAVA APPLET
+4) JAVA SERVER PAGES(JSP)
+5) ACTIVE SERVER PAGES (ASP)
+6) JAVA SERVELET
+
+STATELESS AND STATEFULPROTOCOL :
+--------------------------------
+A PROTOCOL IS SAID AS STATELESS WHEN A CLIENT OPENS A CONNECTION AND REQUEST SOME RESOURCE OR INFORMATION WHICH DOESNOT MAINTAIN PERSISTENT CONNECTION. THE SERVER RESPONDS WITH THE REQUESTED RESOURCE (IF AVALAIBLE) OR SENDS AN APPROPRIATE ERROR STATUS. AFTER CLOSING THE CONNECTION. THE SERVER DOESNOT REMEBER ANY INFORMATION ABOUT THE CLIENT. SO THE SERVER CONSIDERS THE NEXT REQUEST FROM THE SAME CLIENT AS A FRESH REQUEST WITH NO RELATION TO THE PREVIOUS REQUEST.THE EXAMPLE OF THIS TYPE OF PROTOCOL IS HTTP. EACH TIME A CLIENT RETRIVES A WEB PAGE. A CLIENT OPENS A SEPERATE CONNECTION TO THE WEB SERVER AND THE SERVER AUTOMATICALLY DOES NOT KEEP ANY RECORD OF PREVIOUS CLIENT REQUEST. BUT IT WOULD HAVE BEEN HANDY IF WEB BROWSERS ESTABLISHED A SINGLE CONNECTION THROUGH WHICH MULTIPLE REQUEST COULD BE MADE.
+
+A PROTOCOL IS SAID AS STATEFUL IF THE RESPONSE TO A GIVEN REQUEST MAY DEPEND NOT ONLY ON THE CURRENT REQUEST, BUT ALSO ON THE OUTCODE OF THE PREVIOUS REQUEST. FOR EXAMPLE : FTP. TYPICALLY IN A STATEFUL PROTOCOL, MULTIPLE CLIENT REQUESTS AND RESPONSES ARE SENT ACROSSED A SINGLE NETWORK CONNECTION SERVER. BASED ON THIS CONNECTION THE SERVER CAN IDENTIFY SUCH REQUEST AS FORMING A SINGLE SESSION. FOR IMPLEMENTING FLEXIBLE BUSINESS TRANSACTIONS ACROSS MULTIPLE REQUESTS AND RESPONSES, TWO FACILITIES ARE NEED :
+1) SESSION
+3) STATE 
+
+WHY HTTP PROTOCOL IS CALLED A STATELESS PROTOCOL :
+------------------------------------------------
+HTTP IS THE UNDERLINE PROTOCOL USED BY THE WORLD WIDE WEB. IT DEFINES HOW MESSAGES ARE FORMATTED AND TRANSMITTED, AND WHAT ACTIONS WEB SERVERS AND BROWSERS SHOULD TAKE IN RESPONSE TO VARIOUS COMMANDS. FOR EXAMPLE : WHEN A URL IS ENTERED IN THE BROWSER THIS ACTUALLY SENDS AN HTTP COMMAND TO THE WEB SERVER DIRECTING IT TO FETCH AND TRANSMIT THE REQUESTED WEB PAGE. THE OTHER MAIN STANDARD CONTROLS HOW THE WWW WORKS IN HTML WHICH COVERS HOW WEB PAGES ARE FORMATED AND DISPLAYED.
+
+HTTP IS CALLED A STATELESS PROTOCOL BECUASE EACH COMMAND IS EXECUTED INDEPENDENTLY WITHOUT ANY KNOWLEDGE OF THE COMMANDS THAT CAME BEFORE IT. THIS IS THE MAIN REASON THAT IT IS DIFFICULT TO IMPLEMENT WEBSITES THAT REACT INTELLIGENTLY TO USER INPUT. THIS SHORT COMMING OF HTTP BEING ADRESSED IN A NUMBER OF NEW TECHNOLOGIES INCLUDING ACTIVATES JAVA, JAVASCRIPT OR COOKIES
+
+
+HYPERTEXT MARKUP LANGUAGE :
+--------------------------
+IT IS THE STANDARD TEXT FORMATTING LANGUAGE FOR DOCUMENTS ON THE INTER CONNECTED COMPUTING NETWORK KNOWN AS THE WORLD WIDE WEB. HTML DOCUMENTS ARE TEXT FILES THAT CONTAIN TWO PARTS :
+1) CONTENT THAT IS NEED TO BE RENDERED ON A COMPUTER SCREEN 
+2) MARKUP OR TAGS, ENCODED INFORMATION THAT DIRECTS THE TEXT FORMAT ON THE SCREEN AND IS GENERALLY HIDDEN FROM THE USER.
+
+
+HTML IS A SUBSET OF A BROADER LANGUAGE CALLED STANDARD GENERALIZED MARKUP LANGUAGE (SGML).
+
+					SGML
+					|												----------------------------------------------------
+                |                                                  |
+		HTML						  XML	
+		|						   |		
+                ----------------------------------------------------
+					|
+                                      XHTML
+
+WHICH IS A SYSTEM FOR ENCODING AND FORMATTING DOCUMENTS WHETHER FOR OUTPUT TO A COMPUTER SCREEN OR TO PAPER. HTML TAGS ARE OF 2 TYPES :
+
+1) EMBEDDED TAGS 
+2) EMPTY TAGS
+
+SOME TAGS IN AN HTML DOCUMENT DETERMINE THE WAY CERTAIN TEXT SUCH AS TITLE WILL BE FORMATTED. OTHER TAGS FROM THE COMPUTER TO RESPOND TO THE USERS ACTIONS ON THE KEYBOARD OR MOUSE. FOR INSTANCE THE USER MIGHT CLICK ON AN ICON AND THAT ACTION MIGHT CALL ANOTHER PIECE OF SOFTWARE TO DISPLAY A GRAPHIC, PLAY A RECORDING OR RUN A SHORT MOVIE. ANOTHER IMPORTANT TAG IS A LINK, WHICH MAY CONTAIN THE URL OF ANOTHER DOCUMENT. THE URL CAN BE COMPARED TO AN ADDRESS WHERE A PARTICULAR DOCUMENT RESIDES. THE DOCUMENT MAYBE STORED ON THE SAME COMPUTER AS THE PARENT DOCUMENT OR ON ANY COMPUTER CONNECTED TO THE WORD WIDE WEB. THE USER CAN NAVIGATE FROM DOCUMENT TO DOCUMENT SIMPLY BY CLICKING ON THIS LINKS. HTML ALSO INCLUDES MARKUP FOR FORMS THAT LET THE USER FEEL OUT INFORMATION AND ELECTRONICALLY SEND OR E-MAIL THE DATA TO THE DOCUMENT AUTHOR, INITIATE SOFISTICATED SEARCHES OF INFORMATION ON THE INTERNET OR ORDER GOOD AND SERVICES. THE SOFTWARE THAT PERMITS THE USER NAVIGATE THE WORLD WIDE WEB AND VIEW HTML ENCODED DOCUMENTS IS CALLED BROWSER. IT INTERPRETS THE HTML TAG IN A DOCUMENT AND FORMATS THE CONTENT FOR SCREEN DISPLAY MOST SITES IN WORLD WIDE WEB ADD HERE TO HTML  STANDARDS AND BECAUSE HTML IS EASY TO USE, THE WORLD WIDE WEB HAS GROWN RAPIDLY.
+
+BASIC HTML DOCUMENT :
+--------------------
+<!DOCTYPE html> // Doc type declaration tag is used by the web browser to understand the version of HTML used in the document. Current version of HTML is 5 and it makes use of the Following declaration 
+<html> 
+<head>
+document header related tags
+</head>
+<body>
+document header related tags
+</body>
+</html>
+
+HTML TAGS :
+----------
+<html> defines an html document. SYNTAX : <html> entire document</html>
+--------------------------------------------------------------------------------------------------------------------------
+<head> introduces text that describes an html document. SYNTAX : <head> HEAD SECTION </head>
+--------------------------------------------------------------------------------------------------------------------------
+<tittle> which is only valid in the head section defines the Tittle of an html Document. 
+SYNTAX : <tittle> DEMO WEB PAGE </tittle>
+---------------------------------------------------------------------------------------------------------------------------
+<meta> Search engines usually catalogues sites by following links from page to page (often known as spidering or crawling & saving identification an classification information for each page. One way that search engine catalogue pages is by reading the content in each page's meta elements which specify information about a document. The meta is used to refer to something that refers to itself. Thus the tag allows us to add information about the page. 
+SYNTAX : <meta attribute>
+2 important attributes of the meta element are :
+a) name = "keywords or description or author" - it identifies the type of meta element. It should be set to either keywords or description or Author.
+b) content = "the keywords based on which the page is to be searched if the name attribute is keywords. The short description to be provided if the name attribute is description"- it is paired with the name attribute which provides the information used by the search engines to catalogue pages.
+
+SYNTAX/ Example : <meta name = "keywords", content= "web page, design, xhtml, tutorial">
+<meta name = "keywords", content= "this website will help you learn the basics of html and xhtml and web page design">
+<meta name = "author", content= "Soumyadeep Basu">
+---------------------------------------------------------------------------------------------------------------------------
+<link> this tag defines a link between a document and an external resource. It is also used to link tp external style sheets and icons, etc. It is an empty element, it contains attributes only. This element goes only in the head section, but it can appear any number of times.
+SYNTAX : <link attribute>
+
+attribute :
+1) rel = "first/prev/next/last/help/icon/stylesheet"
+2) href = "url of the linked document"
+3) type = "media_type" specifies the media type of the link document. for example : "text/CSS","image/x-icon"
+4) sizes = "heightxwidth" specifies the size of the link resource only for rel = "icon"
+5) target = "_blank/_self/_top/_parent/frame_name"
+
+Example : 
+<link rel = "icon" type ="image/x-icon" href ="tomcat.gif">
+
+base tag :
+----------
+which is valid in the head section, defines the base address of an html document, which is used to determine the full address of relative URLs that appear in the document. 
+SYNTAX :  <base attribute> 
+a) href = "url"
+b) target = "_blank/_self/_top/_parent/frame_name"
+
+body tag : the body tag introduces the body of the document. It should appear after the head section and occupy the remainder of the document. 
+Syntax : <body attribute>...</body>
+
+attribute :
+----------
+a) bgcolor = "color"
+b) background = "url of the image file"
+c) bgproperties = "fixed"
+d) text = "color value"
+e) leftmargin = n
+f) topmargin = n
+g) link = "color value"
+h) alink = "color value"
+i) vlink = "color value"
+
+-------------------------------------------------------------------------------------------------------------------------
+font tag:
+--------
+syntax : <font attribute>....</font>
+
+attribute :
+----------
+1) face = "font name"
+2) Size = "font size in pt"
+3) color = "color name"|rgb(red,green,blue)
+
+example : <font face="verdana" size="12pt color="red">Welcome to my web page </font>
+
+-------------------------------------------------------------------------------------------------------------------------
+
+OTHER ESSENTIAL TAGS :
+-------------------------------
+Bold tag : <b>...</b>
+-------------------------------
+italic tag: <i>...</i>
+-------------------------------
+underline tag: <u>...</u>
+-------------------------------
+strikethrough tag: 
+<strike>...</strike>
+-------------------------------
+superscript: <sup>...</sup>
+-------------------------------
+subscript: <sub>...</sub>
+-------------------------------
+paragraph tag : <p>...</p>
+-------------------------------
+line break : <br>
+-------------------------------
+preformatted text tag :
+<pre>...</pre> (&nbsp)
+-------------------------------
+Heading tag : 
+<h1>...</h1>// largest
+<h2>...</h2>
+<h3>...</h3>
+<h4>...</h4>
+<h5>...</h5>
+<h6>...</h6>// smallest
+-------------------------------
+image tag :
+
+<img attribute>
+
+attributes :
+1)src = " image url"
+2) width = "Number"
+3) height = "Number"
+4) Border = "Number"
+5) alt = "text"
+6) ismap
+7) usemap = "#mapname"
+
+example :
+<img src="shapes.jpg" alt="Shapes" width="400" height="200">
+
+Image Mapping :
+
+1) <map name= "name">... </map>  <!-- map tag-->
+2) <area=  <!--area tag--> attributes : 1) shape= "rect|circle|poly"
+					2) coords= "x,y"
+					3) href= "url"
+					4) alt = "text"
+					5) tittle= "text"
+
+
+example :
+
+<img src="shapes-menu.png" alt="Navigation Shapes" usemap="#shapemap" width="500" height="300">
+<map name="shapemap">
+  <!-- A rectangular clickable zone -->
+  <area shape="rect" coords="20,20,150,100" alt="Rectangular Option" href="https://example.com">
+  
+  <!-- A circular clickable zone -->
+  <area shape="circle" coords="250,150,50" alt="Circular Option" href="https://example.com">
+  
+  <!-- A triangular/polygonal clickable zone -->
+  <area shape="poly" coords="400,30,450,120,350,120" alt="Triangular Option" href="https://example.com">
+</map>
+-----------------------------------------------------------------------------------------------------------------------------

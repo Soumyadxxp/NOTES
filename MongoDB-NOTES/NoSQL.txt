@@ -1,0 +1,346 @@
+NoSQL : Not Only SQL
+--------------------
+
+WHAT IS NoSQL ?
+---------------
+
+NoSQL is a non relational DBMS that does not require a fixed schema, avoids joins and is easy to scale. NoSQL database is used 
+for distributed data stores with humongous data storage needs. NoSQL is used for big data and real time web apps for example:
+Companies like Twitter(X) , Meta, google that collect terabytes of user data every single day.
+
+NoSQL data base stands for not only SQL or Not SQL introduced by Carlos Strozzi in 1998. Traditional RDBMS uses SQL syntax to store and retrieve data for further insights. Instead a NoSQL database system encompasses a wide range of database technology
+that can store structured, semi structured, unstructured and polymorphic data.
+
+FEATURES :
+---------
+
+1) NON RELATIONAL : 
+
+NoSQL databases never follow the relational model.
+Never provide tables with flat fixed column records.  
+Work with self contained aggregates or BLOBS(binary large object). 
+Does not require object relational mapping and data normalization.
+No complex features like query languages, query planners, referential integrity joins, ACID.
+
+2) Schema Free :
+---------------
+NoSQL databases are either schema free or have relaxed schema.
+Do not require any sort of definition of the schema of the data.
+Offers heterogenous structures of data in the same domain.
+
+3) Simple API :
+---------------
+Offers easy to use interfaces for storage and query data provided.
+API's allow low level data manipulation and selection methods.
+Text based protocol mostly used in HTTP REST with JSON.
+mostly used no standard based NoSQL query language.
+web enabled databases running as internet facing services.
+
+4) Distributed :
+---------------
+Multiple NoSQL databases can be executed in a distributed fashion.
+Offers autoscaling and fail over capabilities.
+Often ACID concept can be sacrificed for scalability and throughput. 
+Mostly no synchronous replication between distributed nodes asynchronous multi master replication, peer to peer.
+
+When Uses SQL :
+---------------
+SQL is the easiest language used to communicate with the RDBMS.
+For analyzing behavioural related and customised sessions.
+Building custom dashboards.
+It allows us to store and get data from the database quickly.
+Preferred when we want to use joins and executed complex queries.
+
+When uses NoSQL :
+---------------
+When ACID support is not needed.
+When traditional RDBMS model is not enough.
+Data which need a flexible Schema.
+Constraints and validation logic not required to be implemented in databases.
+Login data from distributed sources.
+It should be used to store temporary data like Shopping Karts, Wish lists and etc.
+
+Types of NoSQL Databases :
+-------------------------
+
+NoSQL databases are mainly categorised into 4 types :
+   1) Key Value Pair
+   2) Column Oriented
+   3) Graph Based
+   4) Document Oriented
+Every category has it's unique attributes and limitations. None of the above specified database is better to solve all the problems. Users should select the database based on their product needs.
+
+Key Value Pair : Data is stored in Key Value pairs. It is designed in such a way to handle lots of data and heavy load. Key value pair storage databases store data as a hash table where each key is unique and the value can be a JSON, BLOB, STRING and etc. For example a key value pair may contain a key like language associated with the value like python.
+EXAMPLE :[{"eid":101,"name":"ratan tata","salary":45000},
+         {"eid":102,"name":"mukesh ambani","salary":40000},
+         {"eid":103,"name":"anil ambani","salary":35000}]
+
+ It is one of the most basic NoSQL database example. This kind of NoSQL database is used as a collection,
+dictionaries, associative arrays and etc. Key value stores help the developer to store schema less data. they work best for shopping kart contents. Redis, Dynamo, Riak are some NoSQL examples of Key value pair Database.
+
+2. Column Oriented : It work on Columns and are based on big table paper by Google. Every Column is treated separately.
+example : {" eid " : [101,102,103], "name" : ["ratan tata", "mukesh ambani", "anil ambani"],"salary":[45000,40000,35000]}
+
+HBase, Cassandra, HyperTable are NoSQL query Examples of Column based database.
+
+
+3. Graph Based : A graph type database stores entities as well the relations amongst those entities. the entity is stored as a node with the relationship as edges. an edge gives a relationship between nodes. every node and edge have a unique identifier. Neo4J, InfiniteGraph, OrientDB, FlockDB are some popular graph based databases.
+
+4. Document Oriented : It Stores and retrieves data as key value pair but the value part is stored as a document. The document is stored in JSON format. the value is understood by the DB and can be Queried. MongoDB, CouchDB, Amazon SimpleDB, LotusNotes are Popular example of Document oriented DBMS systems.
+
+----------------------------------------------------------------------------------------------------------------------------
+CAP THEOREM :
+-------------
+It is very important the limitations of NoSQL Databases. NoSQL cannot provide cannot provide consistency and high availability. This was first expressed by Eric brewer in CAP theorem 
+Cap theorem states that we can only achieve at most two out of three gaurettes for  a database:
+i)Consistency ii) availability ii) partition tolerance  here :
+
+1)	Consistency means that all nodes in the network data see the same data at the same time. 
+2)	Availability : availability is a Guarente every request receives a response about whether it was successful or fail. However it does not guarantee that the read request returns the most recent right. The grater no of users a system can cater to better is the availability . 
+3)	 Partition tolerance: it is a guarantee that the system continues to operate despite Arbitrary message loss or failure of part of the system. In other words , even if there is a network outage in the data center and some the computers are unreachable, still the system continues to perform . 
+
+Out of these tree guarantees no system can provide more than two guarantee. Since in the case of the distributed systems, the portioning of the network is a must, the trade off is always between consistency and availability. 
+
+Data types in MongoDB :
+In MongoDB is documents are stored in BSON, which is the binary encoded format of JSON and suing BSON we can make remote procedure call in MongoDB . BSON data formats supports various datatypes :
+1)	String : This is the most commonly used datatypes to store the data . String in MongoDB must me UTF 8 valid . Eg : 
+	Var s1 = “Team”
+	Var s2 = “Team”
+
+	Var s3= s1 + “ “ +s2 
+	Print ( s3)
+2)	Integer :  This types is used to store numerical value. Integer can be 32 bit or 16 bit depending upon the server. For eg : > var  a = 10 
+	Var b = a ++
+	Print(“ value of a = “+a+” and b = “+b)
+             
+3)Double : this type is used to store floating type values. For eg :> var a = 125.36 ,>var b = a++ >Print(“ value of a = “+a+” and b = “+b)
+
+4)Boolean : This type is used to store boolean , (either true or false) For example :
+var flag = 10 > 5
+print (flag1)
+true 
+var flag2 = 10 >50
+print(flag2)
+false
+
+5) Null : this type is used to store a null value
+example : db.employee.insertOne({eno: 1001, ename :"ratan tata", sal :45000, comm :10000})  
+     db.employee.insertOne({eno: 1002, ename :"mukesg ambani", sal :45000, comm :null})
+db.employee.find().preety()
+
+6) Object id : this type is used to store the document's id. It provides a 12 bytes hexadecimal number which asssures the uniqueness of every document. out of these 12 bytes first 4 bytes for the current timestamp next 3 bytes for the machine id next 2 bytes for process id of mongoDb server and remaining 3 bytes are simple increamental value for example :
+
+"_id" : ObjectId("6a5a20f219623f4c4c390467")
+
+7) date : this datatype is used to store the current date or time in units time format. we can specify our own  date time by creating object of date and passing year month date into it. there are various method to return date. it can be either as a string or date object . in the below table the methods for the date is discussed :
+
+ISODate() :  it also returns a date object. uses the ISODate() wrapper.
+new Date() : returns a date object . uses the ISODate() wrapper.
+Date() : it returns the currebt date in string format. 
+ 
+Example : 
+Current date :
+-------------
+var cdate1 = Date()
+print (cdate1)
+Fri Jul 17 2026 18 : 35 :40 GMT + 0530 ( Indian Standard Time)
+
+var cdate1 = new Date()
+print (cdate1)
+Fri Jul 17 2026 18 : 35 :40 GMT + 0530 ( Indian Standard Time)
+
+var cdate1 = ISODate()
+print(cdate1)
+Fri Jul 17 2026 18 : 35 :40 GMT + 0530 ( Indian Standard Time)
+
+User Defined Date :
+-------------------
+var cdate2 = new Date("2019-01-25")
+print (cdate2)
+Fri Jan 25 2019 05: 30 :00 GMT + 0530 ( Indian Standard Time)
+
+var cdate1 = new Date(2004-01-25)
+print (cdate3)
+Fri Feb 25 2004 00: 00 :00 GMT + 0530 ( Indian Standard Time)
+
+print(cdate3.getDate())
+25
+print(cdate3.getMonth())
+1
+print(cdate3.getYear())
+1004
+print(cdate3.getYear()+1900)
+2004
+
+8) Array: this type is used to store arrays or list or multiple values into one key.
+
+var country = ["India","Nepal","Japan","Bhutan","Sri Lanka","Bangladesh"]
+country["India","Nepal","Japan","Bhutan","Sri Lanka","Bangladesh"]
+coutry.sort()
+sorts the array in alphanetical order.
+
+9) Object : this data type is used for embedded documents
+For example :
+
+var employee = {eno:101,ename : 'ratan tata',sal: 45000}
+
+var manager = {edetail : employee, hra : 8000, bonus : 5000}
+
+printjson(manager)
+{
+  "edetail" : {
+	   "eno" : 101,
+           "ename" : "ratan tata",
+           "sal" : 45000
+           },
+           "hra" : 8000,
+           "bonus" : 5000
+}
+
+10) Code :
+11) Binary Data :
+12) Symbol :
+13) Regular Expression :	
+----------------------------------------------------------------------------------------------------------------------------
+
+FEW LIBRARY FUNCTIONS :
+----------------------
+
+ 1) printjson(...) : THIS FUNCTION IS USED TO PRINT THE OUTPUT IN ANY SUITABLE JSON FORMAT. FOR EXAMPLE :
+printjson("HELLO WORLD")
+HELLO WORLD
+
+test> printjson({code :101, name :"ratan tata",address :"mumbai", age : 82, salary : 45000})
+{
+  code: 101,
+  name: 'ratan tata',
+  address: 'mumbai',
+  age: 82,
+  salary: 45000
+}
+
+--------------
+2) hostname (): returns name of the host computer in which it is running.
+--------------
+3) sleep() : halts or suspends the execution for m milliseconds Example :sleep(2000)
+------------
+4) pwd(): returns the present working directory or current directory
+------------
+5) ls([path]) : returns a list of files and directories under the current directory or in the path mentioned.
+------------
+6) cat(fname): returns content of a text file as a string. 
+------------
+7) run(program[,args]) : EXECUTES A PROGRAM AND WAITS FOR IT'S COMPLETION.
+------------
+8) load("jsfilename"): loads and executes a javascript file and returns true if the file is found and executed successfully otherwise it generates an error.
+------------
+9) remove file("path") : Deletes a file or directory and returns true if the file is found, otherwise returns false.
+------------
+Examples of libray functions :
+Few Library Functions:
+------------------------
+1)	printjson(...):
+--------------------
+> printjson("hello world")
+"hello world"
+> printjson({code:1001,name:"ratan tata",address:"mumbai",age:82,salary:45000})
+{
+        "code" : 1001,
+        "name" : "ratan tata",
+        "address" : "mumbai",
+        "age" : 82,
+        "salary" : 45000
+}
+
+2)	hostname():
+----------------
+> hostname()
+
+3)	sleep():
+-------------
+> sleep(2000)
+
+4)	pwd():
+-----------
+> pwd()
+C:\Users\Chinmoy
+
+5)	ls([path]):
+-----------------
+> ls()
+> ls("d:/")
+
+6)	cat(fname):
+---------------
+> cat("E:/Students/CLanguage_2026/3rdone.c")
+
+7)	run(program[, args]):
+-------------------------
+> run("E:/Students/CLanguage_2026/3rdone.exe")
+
+8)	load("jsfilename"):
+------------------------
+> cat("e:/Sample.js")
+var n = "ratan Tata";
+var a = 82;
+print("Name : "+n+" Age : "+a);
+
+> load("e:/Sample.js")
+Name : ratan Tata Age : 82
+true
+
+9)	removeFile("path"):
+------------------------
+> removeFile("e:/Sample.js")
+true
+> removeFile("e:/Sample.js")
+false
+-----------------------------------------------------------------------------------------------------------------------------
+DATABASES COLLECTIONS AND DOCUMENTS IN MONGODB:
+
+IN MONGODB THE FIRST  BASIC STEP IS TO HAVE A DATABASE AND THEN COLLECTION IN PLACE. THE DATABASE IS USED TO STORE ALL OF THE COLLECTIONS AND THE COLLECTION IN TURN IS USED TO STORE ALL OF THE DOCUMENTS. THE DOCUMENTS IN TURN WILL CONTAIN THE RELEVANT FIELD NAME AND FIELD VALUES. THE FOLLOWING TABLE SHOWS THE RELATIONSHIP OF RDBMS TERMINOLOGY WITH MONGODB.
+
+RDBMS :	           MONGODB :
+DATABASE	   DATABASE
+TABLE	           COLLECTION
+TUPLE(ROW)	   DOCUMENT
+ATTRIBUTE (COLUMN) FIELD(ATTRIBUTE)
+TABLE JOIN 	   EMBEDDED DOCUMENTS
+PRIMARY KEY	   PRIMARY KEY (DEFAULT key_id PROVIDED BY MONGODB itself()
+
+DATABASE SERVER AND CLIENT :
+ORACLE/MYSQL	       Mongod
+SQLPLUS/MYSQL	       Mongosh/Mongo
+
+DATABASE : IT IS A PHYSICAL CONTAINER FOR COLLECTIONS. EACH DATABASE GETS ITS OWN SET OF FILES ON THE FILE SYSTEM. A SINGLE MONGODB SERVER TYPICALLY HAS MULTIPLE DATABASES. 
+
+LISTING OUT THE AVALAIBLE DATABASES :
+-----------------------------------
+show dbs 
+
+CREATING A NEW DATABASE OR OPENING AN EXISTING ONE :
+--------------------------------------------------
+IN MONGODB THE DEFAULT DATABASE IS TEST. IF WE DIDNOT CREATE ANY DATABASE OR USE AND EXISTING ONE, THEN COLLECTIONS WILL BE STORED IN THE TEST  DATABASE. MONGODB USES THE "use" COMMAND TO CREATE A DATABASE OR OPEN AN EXISTING ONE. THE COMMAND WILL CREATE A NEW DATABASE IF IT DOESNOT EXIST, OTHERWISE IT WILL RETURN THE EXISTING ONE. THE BASIC SYNTAX OF THE USE COMMAND IS 
+SYNTAX : use database_name 
+EXAMPLE : if we want to use a database with name "Company" then "use" command be as follows :
+use Company.
+
+CHECKING THE DATABASE CURRENTLY IN USE :
+---------------------------------------
+TO CHECK THE DATABASE CURRENTLY IN USE THE "db" COMMAND IS USED. TO BE NOTED, A NEWLY CREATED DATABASE IS NOT LISTED USING THE COMMAND "show dbs" UNTIL WE ARE CREATING A COLLECTION INTO IT. BUT ON CHECKING THE DATABASE CURRENTLY IN USE USING "db" COMMAND THE NEWLY CREATED DATABASE IS SHOWN.
+COMMANDS :
+-------
+use exiperments
+db
+show dbs
+db.createCollection("faltu")
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+DELETING DATABASE :
+------------------
+IN ORDER TO DELETE A DATABASE THE " dropDatabase() " method is used, the Basic syntax for dropDatabase() is :
+
+db.dropdataBase()
+-----------------------------------------------------------------------------------------------------------------------------
+
