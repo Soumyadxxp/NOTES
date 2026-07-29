@@ -197,10 +197,14 @@ printjson(manager)
            "bonus" : 5000
 }
 
-10) Code :
-11) Binary Data :
-12) Symbol :
-13) Regular Expression :	
+10) Code : This datatype is used to store JavaScript code into the document. For example:
+> var msg = function(name, show){print("Welcome "+name+" to the show "+
+show);}
+> msg("Asutosh Rana", "Kaun Banega Crorepati")
+Welcome Asutosh Rana to the show Kaun Banega Crorepati
+11) Binary Data : This datatype is used to store binary data.
+12) Symbol : This datatype is used identically to a string; however, it's generally reserved for languages that use a specific symbol type.
+13) Regular Expression :	This datatype is used to store regular expression.
 ----------------------------------------------------------------------------------------------------------------------------
 
 FEW LIBRARY FUNCTIONS :
