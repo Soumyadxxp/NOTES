@@ -1,0 +1,196 @@
+List Tag :
+---------
+List are of two types one is ordered and another is unordered list.
+
+1) unordered list :
+-------------------
+syntax: <ul type ="disc|circle|square">....</ul>
+	<li>...</li>
+
+Example :
+---------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo Web Page</title>
+    <link rel="icon" type="image/x-icon" href="tomcat.gif">
+</head>
+<body>
+    <ul >
+	<li>Primary Education</li>
+	<ul>
+		<li>Class1</li>
+		<li>Class2</li>
+		<li>Class3</li>
+		<li>Class4</li>
+	</ul>
+	<li>Secondary Education</li>
+	<ul>
+		<li>Class5</li>
+		<li>Class6</li>
+		<li>Class7</li>
+		<li>Class8</li>
+		<li>Class9</li>
+		<li>Class10</li>
+	</ul>
+
+	<li> Higher Secondary education</li>
+	<ul>
+		<li>Science</li>
+		<ul type= "square">
+		<li>Physics</li>
+		<li>Chemistry</li>
+		<li>Mathematics</li>
+		</ul>
+
+		<li>Arts</li>
+		<ul type= "square">
+		<li>Physics</li>
+		<li>Chemistry</li>
+		<li>Mathematics</li>
+		</ul>
+
+		<li>Comerce</li>
+		<ul type= "square">
+		<li>Physics</li>
+		<li>Chemistry</li>
+		<li>Mathematics</li>
+		</ul>
+
+		
+	</ul>
+
+    </ul>
+</body>
+</html>
+-------------------------------------------------------------------------------------------------------------------
+2) Ordered List:
+---------------
+syntax: <ol type="1|I|i|A|a" Start= Nunber ordering>
+	<li>...</li>
+EXAMPLE :
+--------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo Web Page</title>
+    <link rel="icon" type="image/x-icon" href="tomcat.gif">
+</head>
+<body>
+   <ul>Types of Software:</ul>
+	<ol type= "1">
+	<li>System Software</li>
+	<ol type= "A">
+		<li>Operating System</li>
+		<li>Language</li>
+		<li>Translator</li>
+		<li>Utility Program</li>	
+	</ol>
+	<li>Application Software</li>
+	<ol type= "A">
+		<li>Word Processor</li>
+		<li>Spreadsheet Application</li>
+		<li>DBMS</li>	
+	</ol>
+
+	</ol>
+</body>
+</html>
+--------------------------------------------------------------------------------------------------------------------------
+TABLE TAG :
+----------
+TABLE IS A MATRIX OF ROWS AND COLUMNS. IT MAY HAVE "CAPTION". IT DOESNOT MEAN ANYTHING WITHOUT THE TAGS OF ROWS AND COLUMNS(SALES ARE CALLED TABLE DATA). IT IS A CONTAINER TAG CONTAINING THE TAGS FOR CAPTION, TABLE ROW, TABLE HEAD AND TABLE DATA.
+
+SYNTAX : <table attribute>.....</table>
+
+Attribute:
+---------
+ 
+Attributes	  Meaning
+width = N or N%	  N IS THE ABSOLUTE SIZE AND N% RELATIVE SIZE FOR TABLE SIZE AND WINDOW FOR EXAMPLE: <table width= 50%> half  of the screen.
+border= N	  THIS ATTRIBUTES DRAWS THE TABLE WITH A BORDER OF N PIXELS THICK.
+bgcolor	          BACKGROUND COLOUR OF THE ENTIRE TABLE
+bordercolor = "color" this attribute sets the border colour of a page.	
+cell spacing  = N	this separates cell with a gather of N pixels.
+cell padding  = N	separates and the text with a padding of N pixels
+align	                 this causes the table to be aligned in one of a variety of ways on a page. here A should should be  one of left /center/ right.
+	
+a)caption : <caption align = "left|center|right">...</caption>
+b) tr : <tr attribute>...</tr> attributes : height = N, bgcolor = color, align = A, valign = V
+c)th 
+d)td
+syntax for th and td : <th attribute> text
+a) width = N%
+b) height = N
+c) bgcolor = color
+d) align = A
+e) colspan =N
+f) rowspan = N
+----------------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo Web Page</title>
+    <link rel="icon" type="image/x-icon" href="tomcat.gif">
+</head>
+<body>
+    <table width="40%" border="1" align="center">
+        <caption><h2>Annual Sales Report</h2></caption>
+        <tr>
+            <th>Year</th>
+            <th>Product</th>
+            <th>Price/unit</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>2001</td>
+            <td>Mother Board</td>
+            <td>25000</td>
+            <td>250000</td>
+        </tr>
+        <tr>
+            <td>2001</td>
+            <td>Mother Board</td>
+            <td>25000</td>
+            <td>250000</td>
+        </tr>
+        <tr>
+            <td>2001</td>
+            <td>Mother Board</td>
+            <td>25000</td>
+            <td>250000</td>
+        </tr>
+        <tr>
+            <td>2001</td>
+            <td>Mother Board</td>
+            <td>25000</td>
+            <td>250000</td>
+        </tr>
+        <tr>
+            <td>2001</td>
+            <td>Mother Board</td>
+            <td>25000</td>
+            <td>250000</td>
+        </tr>
+        <tr>
+            <td>2001</td>
+            <td>Mother Board</td>
+            <td>25000</td>
+            <td>250000</td>
+        </tr>
+        <tr>
+            <td>2001</td>
+            <td>Mother Board</td>
+            <td>25000</td>
+            <td>250000</td>
+        </tr>
+        <tr>
+            <td>2001</td>
+            <td>Mother Board</td>
+            <td>25000</td>
+            <td>250000</td>
+        </tr>
+    </table>
+</body>
+</html>
+----------------------------------------------------------------------------------------------------------------------------
