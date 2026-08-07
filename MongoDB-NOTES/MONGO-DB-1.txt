@@ -1,0 +1,98 @@
+COLLECTION :
+------------
+MONGODB STORES DATA RECORDS AS DOCUMENTS WHICH ARE GATHERED TOGETHER IN COLLECTIONS. THEREFORE COLLECTION IS A GROUP OF MONGODB DOCUMENTS. A DATABASE STORES ONE OR MORE COLLECTIONS OF DOCUMENTS. IT IS THE EQUIVALENT OF AN RDBMS TABLE. A COLLECTION EXISTS WITHIN A SINGLE DATABASE. COLLECTIONS DONOT ENFORCE A SCHEMA. DOCUMENTS WITHIN A COLLECTION CAN HAVE DIFFERENT FIELDS. TYPICALLY ALL DOCUMENTS IN A COLLECTION ARE OF SIMILAR OR RELATED PURPOSE. 
+
+LISTING OUT THE AVAILABE COLLECTIONS IN A DATABASE:
+--------------------------------------------------
+TO LIST OUT THE COLLECTIONS AVAILABLE IN A DATABASE THE COMMAND SHOULD BE EXECUTED. 
+
+SYNTAX: show collections
+
+FOR EXAMPLE :
+------------
+TO LIST OUT THE COLLECTIONS AVAILABLE IN THE DATABASE "BUSINESS" THE COMMAND TO BE EXECUTED :
+1) use business
+2) show collections
+
+CREATING COLLECTION:
+--------------------
+A COLLECTION CAN BE CREATED IN ANY OF THE FOLLOWING TWO WAYS:
+
+1) CREATING AN EMPTY COLLECTION EXPLICITLY :
+-------------------------------------------
+MONGODB PROVIDES db.createCollection() METHOD TO EXPLICITLY CREATE A COLLECTION WITH VARIOUS OPTIONS SUCH AS SETTING THE MAXIMUM SIZE OR THE DOCUMENTATION VALIDATION RULES. IF ONE IS NOT SPECIFYING THESE OPTIONS HE DOESNOT NEED TO EXPLICITLY CREATE THE COLLECTION SINCE MONGODB CREATES NEW COLLECTIONS WHEN ONE FIRST STORES DATA FOR THE COLLECTIONS. A COLLECTION CAN EXPLICITLY BE CREATED WITH THE FOLLOWING SYNTAX :
+db.createCollection("name of the collection")
+company> db.createCollection("department")
+{ ok: 1 }
+company> show dbs
+admin    40.00 KiB
+company   8.00 KiB
+config   96.00 KiB
+local    64.00 KiB
+
+2) CREATING A COLLECTION BY INSERTING A NEW DOCUMENT :
+------------------------------------------------------
+A COLLECTION CAN ALSO BE CREATED BY INSERTING A DOCUMENT INTO IT. IN THAT CASE NOT ONLY A NEW COLLECTION IS CREATED BUT A NEW DOCUMENT IS ALSO GATHERED. FOR EXAMPLE : LET'S CREATE A COLLECTION DEPARTMENT IN THE DATABASE COMPANY BY INSERTING A DOCUMENT WITH THE STRUCTURE {dno,dname,lock} as :
+company> db.department.drop()
+true
+company> 
+company> db.department.insertOne({dno:10, dname:'accounts',loc:'kolkata'})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6a6c52ab0ad80cc0b3e865db')
+}
+----------------------------------------------------------------------------------------------------------------------------
+
+DISPLAYING SCHEMA OF A COLLECTION :
+---------------------------------
+1) company> show collections
+department
+company> printjson(db.department.findOne())
+{
+  _id: ObjectId('6a6c52ab0ad80cc0b3e865db'),
+  dno: 10,
+  dname: 'accounts',
+  loc: 'kolkata'
+}
+------------------------------------------------------
+2) company> var deptschema = db.department.findOne()
+
+company> for(key in deptschema) print(key+":"+typeof deptschema[key])
+_id:object
+dno:number
+dname:string
+loc:string
+--------------------------------------------------------------------------------------------------------------------------
+IMPORTANT COLLECTION METHODS:
+----------------------------
+1) getDB() : this method returns the database object associated with the collection. The syntax of this method is as below,
+syntax: db.collection.getDB()
+
+2) count(): this method returns the no. of documents in the collection or view. Although it is a deprecated method but still can be used to count number of documents in a collection. It can also be used to count number of documents based on some conditions. Syntax:  db.department.count()
+db.department.count({dno:20}) here department is collection.
+
+3)estimatedDocumentCount() : this method returns the no. of all the documents associated with collection. It is similar to count() but doesnot take a query filter.
+Syntax : db.department.estimatedDocumentCount() here department is collection.
+
+4)dataSize(): this method returns the size of a collection in bytes. Data compression does not affect this value.
+Syntax: db.department.dataSize()
+
+5) storageSize(): this method returns the total amount of storage in bytes allocated to this collection for document storage. If Collection Data is compressed the storage size reflects the compressed size and maybe smaller than the value returned by the dataSize method()
+Syntax: db.department.storageSize() here department is collection.
+
+6) totalSize(): this method returns the total size in bytes of the data in the Collection class, the size of every index on collection. If collection data is compressed the return size reflects the compressed size of the collection data. If an index uses prefix compression the return size reflects the compressed size of the index. The syntax of this method is as below:
+Syntax: db.department.totalSize() here department is collection.
+
+7) stats(): this method returns the statistics about a collection.
+Syntax: db.department.stats() here department is collection.
+
+8) renameCollection(): this method renames a collection.
+Syntax: db.department.renameCollection("target") or db.department.renameCollection("target",dropTarget) where target is the newname of the collection of string type. dropTarget is the Boolean type optional parameter. If true, MongoDb drops the target collection prior to renaming the collection if it already exists. Otherwise the renameCollection stops the renaming. the default dropTarget is false, here department is collection name.
+
+9) copyTo(): this method  creates a duplicate copy of an existing collection by copying all the documents of the source. Nod indexes are copied.
+Syntax:  db.department.copyTo("dept") here department is collection  and dept is new collection.
+
+10) drop(): this method removes the collection or view from the database. The method also removes any index associated with the dropped collection.
+Syntax: db.department.drop() here department is collection.
+-----------------------------------------------------------------------------------------------------------------------------
+
