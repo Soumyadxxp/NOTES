@@ -1,0 +1,76 @@
+DOCUMENT:
+---------
+MONGODB STORES RECORDS AS BSON DOCUMENTS. BSON IS A BINARY REPRESENTATION OF JSON DOCUMENTS. DOCUMENTS IS A SET OF KEY VALUE PAIRS AND EVERY KEY REPRESENTS A FIELD OF A DOCUMENT. IT IS AN EQUIVALENT OF AN RDBMS TUPLE OR RECORD. DOCUMENTS HAVE DYNAMIC SCHEMA. DYNAMIC SCHEMA MEANS THAT DOCUMENTS IN THE SAME COLLECTION DO NOT NEED TO HAVE THE SAME SET OF FIELDS OR STRUCTURE AND COMMON FIELDS IN A COLLECTIONS DOCUMENT MAY HOLD DIFFERENT TYPES OF DATA.
+
+DOCUMENTS STRUCTURE:
+-------------------
+MONGODB DOCUMENTS ARE COMPOSED OF 'FIELD:VALUE' PAIRS AND HAVE THE FOLLOWING STRUCTURE:
+
+{
+	field-1: value-1,
+	field-2: value-2,
+
+	......
+
+	field-n: value-n,
+}
+
+the value of a field can be any of the BSON data types.
+
+RULES ON FIELD NAMES:
+--------------------
+ALL THE FIELD NAMES ARE STRINGS. THE FIELD NAME_ID IS RESERVED FOR USE AS A PRIMARY KEY. IT'S VALUE MUST BE UNIQUE IN THE COLLECTION. IT IS IMMUTABLE AND MAYBE OF ANY TYPE OTHER THAN AN ARRAY. IT CAN BE AUTO GENERATED OR GIVEN BY THE USER. IF IT IS AUTO GENERATED THEN IT IS OF THE TYPE OBJECT ID(). IT IS ALWAYS THE FIRST FIELD IN THE DOCUMENTS. IF THE SERVER RECEIVES A DOCUMENT THAT DOES NOT HAVE THE _ID FIELD FIRST, THEN THE SERVER WILL MOVE THE FIELD TO THE BEGINING. IT IS A 12 BYTE HEXA DECIMAL NUMBER WHICH ASSURES THE UNIQUENESS OF EVERY DOCUMENT. WE CAN PROVIDE _ID WHILE INSERTING THE DOCUMENT. IF WE DON'T THEN MONGODB PROVIDES A UNIQUE ID FOR EVERY DOCUMENT. OUT OF THIS 12 BYTES FIRST 4 BYTES FOR THE CURRENT TIME STAMP, NEXT 3 BYTES FOR MACHINE ID NEXT 2 BYTES FOR PROCESS ID OF MONGODB SERVER AND REMAINING 3 BYTES ARE SIMPLE INCREMENTAL VALUE.
+
+SAMPLE DOCUMENTS :
+----------------
+IN MONGODB DOCUMENT {} SIGNIFY COMPOSITE ATTRIBUTE FOR EXAMPLE NAME, [] SIGNIFY MULTIVALUED ATTRIBUTES FOR EXAMPLE DEGREE AND 
+[[]]  SIGNIFY COMPLEX ATTRIBUTES ( COMBINATION OF MULTIVALUED AND COMPOSITE ATTRIBUTE FOR EXAMPLE ADDRESS, CONTACT.
+THE ENTIRE STRUCTURE IS EMBEDED IN A CENTRAL {} AS BELOW:
+
+SAMPLE1 (SIMPLE DOCUMENT):
+-------------------------
+{_id:1,regn:101,name:'rohit roy',sex:'m',dob: ISODate("1981-03-25")}
+
+SAMPLE2(DOCUMENTS USING {}):
+---------------------------
+{_id:1,regn:101,name:{fname:'rohit', lname: 'roy'},sex:'m', sub:['eng','maths','sci'] dob: ISODate("1981-03-25")}
+
+Sample3 (document using []):
+------------------------------
+{_id:1,regn:101,name:{fname:'rohit', lname:'roy'},sex:'m',sub:['eng','maths','sci']}
+
+Sample4 ({} nesting {}):
+------------------------------
+{
+	_id:1,
+	name:{fname:'rohit', lname:'roy'},
+	address:
+	{
+		permanent: {hno: '25/12', street: 'ghatal midnapur',pin:'456321'},
+		local    : {hno: '47/36', street: 's.k.mitra road',pin:'700045'}
+	}
+}
+Sample5 ({} nesting []):
+------------------------------
+{
+	_id:1,
+	name:{fname:'rohit', lname:'roy'},
+	marks: {subject: ['eng','maths','sci'],score:[68,84,80]}
+}
+Sample6 ([] nesting {}):
+------------------------------
+{
+	_id:1,
+	name:{fname:'rohit', lname:'roy'},
+	marks: [{eng:65,maths:71,sci:94},{eng:74,maths:64,sci:81}]
+}
+Sample7 ([] nesting []):
+------------------------------
+{
+	_id:1,
+	name:{fname:'rohit', lname:'roy'},
+	marks: [['eng','maths','sci'],[68,84,80]]
+}
+
+
+
